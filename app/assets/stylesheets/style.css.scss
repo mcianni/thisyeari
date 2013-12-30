@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 html, body {
-  background: url(bg.jpg) no-repeat center center fixed;
+  background: url(image-path('bg.jpg')) no-repeat center center fixed;
   background-size: cover;
 }
 
@@ -15,7 +15,7 @@ body {
 }
 
 .well {
-  background: url(content-bg.png) repeat top left;
+  background: url(image-path('content-bg.png')) repeat top left;
   border-radius: 0;
   border: 0;
 }
