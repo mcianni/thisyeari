@@ -6,7 +6,7 @@
       = @goal.description
 
   %h4
-    Total Progress
+    Progress
     %strong.pull-right= "#{'%.2f' % @goal.current_quantity} / #{@goal.quantity}"
   .progress
     .progress-bar{ style: "width: #{100 * @goal.current_quantity / @goal.quantity}%;"}

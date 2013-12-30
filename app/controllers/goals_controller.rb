@@ -5,28 +5,31 @@ class GoalsController < ApplicationController
 
   # GET /my-goal
   def show
-    time = Time.now
-    qpd = @goal.quantity / 365
-    @q_by_today    = qpd * (time.yday - 1)
-    @q_by_tomorrow = qpd * time.yday
-    @q_by_month    = qpd * Date.new(time.year, time.month - 1).yday
-    @q_by_week     = qpd * (time.yday + (7 - time.wday - 1))
+    if @goal
+      time = Time.now
+      qpd = @goal.quantity / 365
+      @q_by_today    = qpd * (time.yday - 1)
+      @q_by_tomorrow = qpd * time.yday
+      @q_by_month    = qpd * Date.new(time.year, time.month - 1).yday
+      @q_by_week     = qpd * (time.yday + (7 - time.wday - 1))
+    end
   end
 
   # GET /goals/new
   def new
-    unless current_user.goal
-      if session[:goal]
-        @goal = Goal.new(description: session[:goal], user_id: current_user.id)
-        session.delete(:goal)
-        @goal.save!
-        debugger
-        if @goal.persisted?
-          redirect_to :goals
-        end
-      end
-    else
+    if current_user.goal
       redirect_to :goals, notice: "You've already created your goal!"
+    else
+      if session[:goal]
+        @goal = Goal.new(description: session.delete(:goal), user_id: current_user.id)
+        if @goal.save
+          redirect_to goals_path
+        else
+          render action: 'new'
+        end
+      else
+        @goal = Goal.new
+      end
     end
   end
 
