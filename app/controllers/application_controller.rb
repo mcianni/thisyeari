@@ -5,6 +5,10 @@ class ApplicationController < ActionController::Base
 
   private
   def after_sign_in_path_for(resource)
-    goals_path
+    if session[:goal]
+      new_goals_path
+    else
+      goals_path
+    end
   end
 end

@@ -1,15 +1,30 @@
 class GoalsController < ApplicationController
+  before_filter :save_goal_in_session, only: [:create]
   before_filter :authenticate_user!
   before_action :set_goal, only: [:show, :edit, :update, :destroy]
 
   # GET /my-goal
   def show
+    time = Time.now
+    qpd = @goal.quantity / 365
+    @q_by_today    = qpd * (time.yday - 1)
+    @q_by_tomorrow = qpd * time.yday
+    @q_by_month    = qpd * Date.new(time.year, time.month - 1).yday
+    @q_by_week     = qpd * (time.yday + (7 - time.wday - 1))
   end
 
   # GET /goals/new
   def new
     unless current_user.goal
-      @goal = Goal.new
+      if session[:goal]
+        @goal = Goal.new(description: session[:goal], user_id: current_user.id)
+        session.delete(:goal)
+        @goal.save!
+        debugger
+        if @goal.persisted?
+          redirect_to :goals
+        end
+      end
     else
       redirect_to :goals, notice: "You've already created your goal!"
     end
@@ -63,6 +78,10 @@ class GoalsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_goal
       @goal = current_user.goal
+    end
+
+    def save_goal_in_session
+      session[:goal] = params[:goal][:description]
     end
 
     def verify_user

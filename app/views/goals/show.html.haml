@@ -4,10 +4,29 @@
   %p
     %h2.lead
       = @goal.description
-  %p
-    %strong= model_class.human_attribute_name(:quantity) + ':'
-    %br
-    = @goal.quantity
+
+  %h4
+    Total Progress
+    %strong.pull-right= "#{'%.2f' % @goal.current_quantity} / #{@goal.quantity}"
+  .progress
+    .progress-bar{ style: "width: #{100 * @goal.current_quantity / @goal.quantity}%;"}
+
+  .row
+    .col-md-3.status
+      %h3 As of yesterday
+      = dist_diff(@q_by_today, @goal.current_quantity)
+
+    .col-md-3.status
+      %h3 As of today
+      = dist_diff(@q_by_tomorrow, @goal.current_quantity)
+
+    .col-md-3.status
+      %h3 By end of week
+      = dist_diff(@q_by_week, @goal.current_quantity)
+
+    .col-md-3.status
+      %h3 By end of month
+      = dist_diff(@q_by_month, @goal.current_quantity)
 
   = link_to t('.edit', :default => t("helpers.links.edit")), edit_goals_path, :class => 'btn btn-default'
   = link_to t('.destroy', :default => t("helpers.links.destroy")), goals_path, :method => "delete", :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-danger'
