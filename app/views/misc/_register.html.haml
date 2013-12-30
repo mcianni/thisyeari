@@ -2,3 +2,4 @@
   = link_to 'My Goal', goals_path
 - else
   = link_to 'Sign up', new_user_registration_path
+  = link_to glyph('twitter'), user_omniauth_authorize_path(provider: :twitter)

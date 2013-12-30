@@ -21,7 +21,7 @@
 
 
   %body
-    .navbar.navbar-static-top.navbar-inverse
+    .navbar.navbar-static-top
       .container
         %button.navbar-toggle(type="button" data-toggle="collapse" data-target=".navbar-responsive-collapse")
           %span.icon-bar
@@ -35,7 +35,7 @@
             %li= link_to "Link 3", "/path3"
             %li= link_to "Link 3", "/path3"
 
-        .pull-right.user-nav
+        .navbar-right.user-nav
           = render 'misc/register'
           = render 'misc/login'
 

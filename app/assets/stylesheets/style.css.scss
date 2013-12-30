@@ -2,6 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+html, body {
+  background: url(bg.jpg) no-repeat center center fixed;
+  background-size: cover;
+}
+
 body {
   background-color: #333;
   .main-container {
@@ -9,8 +14,15 @@ body {
   }
 }
 
-.navbar-inverse {
-  background-color: #333;
+.well {
+  background: url(content-bg.png) repeat top left;
+  border-radius: 0;
+  border: 0;
+}
+
+//.navbar-inverse {
+.navbar {
+  //background-color: #333;
   .navbar-brand {
     color: whitesmoke;
     font-size: 32px;
@@ -33,6 +45,20 @@ h2.lead {
 }
 
 form.large {
+  input[type="text"] {
+    border-radius: 0;
+    border: 0;
+    padding: 10px;
+    font-size: 24px;
+    height: auto;
+  }
+}
+
+form.xlarge {
+  input[type="text"] {
+    //width: 100%;
+  }
+
   input[type="text"],
   input[type="number"], {
     border-radius: 0;
