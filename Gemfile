@@ -9,7 +9,9 @@ gem 'simple_form'
 gem 'twitter-bootstrap-rails', github: 'seyhunak/twitter-bootstrap-rails', branch: 'bootstrap3'
 gem 'haml'
 gem 'devise'
-
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'omniauth-twitter'
 
 group :development do
   gem 'better_errors'
@@ -18,6 +20,7 @@ group :development do
   gem 'haml-rails'
   gem 'thin'
   gem 'sqlite3'
+  gem 'debugger'
 end
 
 group :test do
