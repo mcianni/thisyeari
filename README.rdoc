@@ -1,0 +1,59 @@
+== README
+
+I will run x miles.
+I will take my dog hiking x times.
+I will do x good deeds.
+I will go to the gym x times.
+I will save x dollars.
+I will use x dollars worth of coupons.
+I will watch x documentaries.
+I will read x books.
+I will read x pages of books.
+I will paint x paintings.
+I will write in my diary x times.
+I will volunteer x times.
+I will cook x meals for others.
+I will see live entertainment x times.
+I will host x parties.
+I will bikes x miles.
+I will swim x laps.
+I will bike to work x times.
+I will write x songs.
+I will sell x things from my overfilling attic.
+I will opt to shop locally instead of at a big box store x times.
+I will cook instead of eating out x times.
+I will donate to charity x times.
+I will write x hand written letters.
+I will contribute to x open source projects.
+I will lose x pounds.
+I will contribute to x kickstarter projects.
+I will buy my wife/husband flowers x times.
+
+
+
+This README would normally document whatever steps are necessary to get the
+application up and running.
+
+Things you may want to cover:
+
+* Ruby version
+
+* System dependencies
+
+* Configuration
+
+* Database creation
+
+* Database initialization
+
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...
+
+
+Please feel free to use a different markup language if you do not plan to run
+<tt>rake doc:app</tt>.

@@ -1,0 +1,33 @@
+// Place all the styles related to the pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+  background-color: #333;
+  .main-container {
+  	background-color: #EEE;
+  }
+}
+
+.navbar-inverse {
+  background-color: #333;
+  .navbar-brand {
+    color: whitesmoke;
+    font-size: 32px;
+    line-height: 28px;
+  }
+}
+
+h2.lead {
+  font-size: 60px;
+}
+
+form.large {
+  input[type="text"],
+  input[type="number"], {
+    border-radius: 0;
+    padding: 10px;
+    font-size: 24px;
+    height: auto;
+  }
+}
