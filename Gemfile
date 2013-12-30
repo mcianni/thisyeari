@@ -12,7 +12,6 @@ gem 'devise'
 
 
 group :development do
-  gem 'therubyracer'
   gem 'better_errors'
   gem 'quiet_assets'
   gem 'binding_of_caller'
@@ -34,6 +33,7 @@ end
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 gem 'less-rails'
+gem 'therubyracer'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
