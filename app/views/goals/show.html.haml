@@ -34,6 +34,8 @@
     now to get started on making 2014 great!
 
 - content_for :ps do
-  .form-controls
-    = link_to glyph('edit'), edit_goals_path, :class => 'btn btn-default'
-    = link_to glyph('trash'), goals_path, :method => "delete", :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure you want to delete your goal?')) }, :class => 'btn btn-danger'
+  /.form-controls
+  /  = link_to glyph('edit'), edit_goals_path, :class => 'btn btn-default'
+  /  = link_to glyph('trash'), goals_path, :method => "delete", :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure you want to delete your goal?')) }, :class => 'btn btn-danger'
+  = render 'points/new'
+  /= render 'points/index', points: @points

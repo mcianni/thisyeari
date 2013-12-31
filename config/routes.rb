@@ -1,7 +1,10 @@
 Bytheendoftheyear::Application.routes.draw do
+
   root 'pages#home'  
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
-  resource :goals, :path => 'my-goal'  
+  resource :goals, :path => 'my-goal' do
+    resources :points, except: [:index, :new, :show]
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

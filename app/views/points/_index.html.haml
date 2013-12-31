@@ -1,0 +1,34 @@
+
+/= render 'points/form'
+.pull-right
+  = link_to 'Update my progress', '#', id: 'new-point', class: 'btn btn-primary btn-lg'
+
+.modal.fade
+  .modal-dialog
+    .modal-content
+      .modal-header
+        %h3 I've made progress towards my goal!
+      .modal-body
+        = render 'points/form'
+
+.well
+  %h3 Progress History
+  %br
+  %table.table.table-striped
+    %tr
+      %th Date
+      %th Quantity
+      %th Comments
+      %th
+      %th
+      %th
+
+    - points.each do |point|
+      %tr
+        %td= point.created_at.to_s(:short)
+        %td= point.quantity
+        %td= point.comments
+        /%td= link_to 'Edit', edit_point_path(point)
+        /%td= link_to 'Destroy', point, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+  %br

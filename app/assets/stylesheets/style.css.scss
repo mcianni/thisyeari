@@ -14,6 +14,19 @@ body {
   }
 }
 
+.btn {
+  border-radius: 0;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  -ms-border-radius: 0;
+  border: 0;
+}
+
+a.btn:visited {
+  color: #333;
+}
+
+
 .well,
 .jumbotron {
   background: url(image-path('content-bg.png')) repeat top left;
@@ -107,6 +120,16 @@ form.xlarge {
   }
 }
 
+.modal-dialog {
+  margin-top: 110px;
+}
+
+.modal-header {
+  h3 { 
+    margin: 0;
+  }
+}
+
 .status {
   text-align: center;
 }
@@ -115,6 +138,7 @@ form.xlarge {
   text-align: right;
   margin-top: 30px;
   font-size: 32px;
+  line-height: normal;
 }
 
 span.quantity {

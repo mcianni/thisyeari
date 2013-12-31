@@ -1,0 +1,9 @@
+= form_for([@goal, @point || Point.new], url: goals_points_path, html: { class: 'fform-horizontal' }) do |f|
+  .form-group
+    = label_tag :quantity, "Quantity (how many of what you're doing, that you did)"
+    = f.text_field :quantity, class: 'form-control'
+  .form-group
+    = label_tag :comments, "Comments (leave yourself a note) (optional)"
+    = f.text_field :comments, class: 'form-control'
+
+  = f.submit 'Save my progress', class: 'btn btn-primary'

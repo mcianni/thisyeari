@@ -1,0 +1,11 @@
+/= render 'points/form'
+.pull-right
+  = link_to 'Update my progress', '#', id: 'new-point', class: 'btn btn-primary btn-lg'
+
+.modal.fade
+  .modal-dialog
+    .modal-content
+      .modal-header
+        %h3 I've made progress towards my goal!
+      .modal-body
+        = render 'points/form'

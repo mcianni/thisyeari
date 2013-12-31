@@ -12,6 +12,7 @@ class GoalsController < ApplicationController
       @q_by_tomorrow = qpd * time.yday
       @q_by_month    = qpd * Date.new(time.year, time.month - 1).yday
       @q_by_week     = qpd * (time.yday + (7 - time.wday - 1))
+      @points = @goal.points
     end
   end
 
