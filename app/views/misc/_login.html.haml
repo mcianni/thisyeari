@@ -1,5 +1,9 @@
 - if user_signed_in?
-  %b= "Hi, #{user_name(current_user)}"
-  = link_to 'Logout', destroy_user_session_path, method: :delete
+  %span= "Hi, #{user_name(current_user)}"
+  .controls
+    = link_to glyph('signout'), destroy_user_session_path, method: :delete
 - else
-  = link_to 'Sign in', new_user_session_path
+  %span Sign in with:
+  .providers
+    = link_to glyph('twitter'), user_omniauth_authorize_path(provider: :twitter)
+    = link_to glyph('facebook'), user_omniauth_authorize_path(provider: :twitter)

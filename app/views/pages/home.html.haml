@@ -1,2 +1,8 @@
-
 = render 'goals/short_form'
+
+- content_for :carousel do
+  .carousel.slide{ data: { ride: 'carousel' } }
+    .carousel-inner
+      - @examples.each do |example|
+        .item= "I will #{example}."
+

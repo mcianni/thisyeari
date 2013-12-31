@@ -33,7 +33,27 @@ body {
 }
 
 .user-nav {
-  color: whitesmoke;
+  background-color: #333;
+  padding: 8px;
+  span {
+    color: whitesmoke;
+  }
+
+  .providers,
+  .controls {
+    text-align: right;
+    font-size: 32px;
+
+    a {
+      color: #00FFF5;
+      padding: 2px;
+      &:hover {
+        text-decoration: none;
+        color: #5200FF;
+        background-color: #00FFF5;
+      }
+    }
+  }
 }
 
 .form-horizontal .form-group {
@@ -50,8 +70,14 @@ form.large {
     border-radius: 0;
     border: 0;
     padding: 10px;
-    font-size: 24px;
+    font-size: 36px;
     height: auto;
+  }
+
+  input[type="submit"].btn {
+    border: 0;
+    border-radius: 0;
+    text-transform: uppercase;
   }
 }
 
@@ -73,10 +99,16 @@ form.xlarge {
   text-align: center;
 }
 
+.carousel {
+  text-align: right;
+  margin-top: 30px;
+  font-size: 32px;
+}
+
 span.quantity {
   font-size: 30px;
   font-weight: bold;
-  background-color: lightblue;
+  //background-color: lightblue;
   padding: 0 5px;
 }
 

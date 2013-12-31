@@ -36,15 +36,16 @@
             %li= link_to "Link 3", "/path3"
 
         .navbar-right.user-nav
-          = render 'misc/register'
+          /= render 'misc/register'
           = render 'misc/login'
 
     .container
       .row
         .col-lg-12
+          = bootstrap_flash
           .well
-            = bootstrap_flash
             = yield
+          = yield :carousel
         /.col-lg-3
         /  .well.sidebar-nav
         /    %h3 Sidebar
