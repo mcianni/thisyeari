@@ -1,8 +1,9 @@
 = render 'goals/short_form'
 
-- content_for :carousel do
+- content_for :ps do
   .carousel.slide{ data: { ride: 'carousel' } }
     .carousel-inner
+      .item.active= "I will #{@examples.shift}"
       - @examples.each do |example|
         .item= "I will #{example}."
 

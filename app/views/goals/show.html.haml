@@ -27,12 +27,13 @@
     .col-md-3.status
       %h3 By end of month
       = dist_diff(@q_by_month, @goal.current_quantity)
-
-  = link_to t('.edit', :default => t("helpers.links.edit")), edit_goals_path, :class => 'btn btn-default'
-  = link_to t('.destroy', :default => t("helpers.links.destroy")), goals_path, :method => "delete", :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-danger'
-
 - else
   .alert.alert-box.alert-info
     You haven't set your goal yet. Hurry up 
     = link_to 'and set your goal', new_goals_path
     now to get started on making 2014 great!
+
+- content_for :ps do
+  .form-controls
+    = link_to glyph('edit'), edit_goals_path, :class => 'btn btn-default'
+    = link_to glyph('trash'), goals_path, :method => "delete", :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure you want to delete your goal?')) }, :class => 'btn btn-danger'

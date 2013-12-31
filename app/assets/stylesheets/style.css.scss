@@ -14,11 +14,13 @@ body {
   }
 }
 
-.well {
+.well,
+.jumbotron {
   background: url(image-path('content-bg.png')) repeat top left;
   border-radius: 0;
   border: 0;
-  margin-top: 100px;
+  margin-top: 80px;
+  padding: 24px 40px 36px;
 }
 
 //.navbar-inverse {
@@ -63,6 +65,7 @@ body {
 
 h2.lead {
   font-size: 60px;
+  margin-top: 0;
 }
 
 form.large {
@@ -92,6 +95,15 @@ form.xlarge {
     padding: 10px;
     font-size: 24px;
     height: auto;
+  }
+}
+
+.form-controls {
+  text-align: right;
+  .btn {
+    border: 0;
+    border-radius: 0;
+    font-size: 18px;
   }
 }
 
