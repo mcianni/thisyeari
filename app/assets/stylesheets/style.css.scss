@@ -26,18 +26,36 @@ a.btn:visited {
   color: #333;
 }
 
+.alert {
+  text-align: right;
+  background-color: transparent;
+  border: 0;
+  border-radius: 0;
+  margin-bottom: 0;
+  color: white;
+  text-shadow: 1px 1px 3px #333;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.alert-danger {
+  background-color: red;
+  text-align: center;
+}
 
 .well,
 .jumbotron {
   background: url(image-path('content-bg.png')) repeat top left;
   border-radius: 0;
   border: 0;
-  margin-top: 80px;
+  //margin-top: 80px;
+  margin-top: 20px;
   padding: 24px 40px 36px;
 }
 
 //.navbar-inverse {
 .navbar {
+  margin-bottom: 80px;
   //background-color: #333;
   .navbar-brand {
     color: whitesmoke;
@@ -132,6 +150,14 @@ form.xlarge {
 
 .status {
   text-align: center;
+  font-size: 18px;
+}
+
+.ps h4 {
+  color: #00FFF5;
+  color: whitesmoke;
+  background-color: #333;
+  padding: 5px 10px;
 }
 
 .carousel {
@@ -139,6 +165,13 @@ form.xlarge {
   margin-top: 30px;
   font-size: 32px;
   line-height: normal;
+  .item {
+    span {
+      background-color: #333;
+      color: #00FFF5;
+      padding: 2px 8px;
+    }
+  }
 }
 
 span.quantity {
@@ -148,6 +181,11 @@ span.quantity {
   padding: 0 5px;
 }
 
+h2.positive, h2.negative {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
 h2.positive {
   color: green;
 }
@@ -155,3 +193,4 @@ h2.positive {
 h2.negative {
   color: red;
 }
+

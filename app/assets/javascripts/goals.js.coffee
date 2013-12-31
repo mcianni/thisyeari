@@ -8,7 +8,7 @@ $ ->
 
   $("#goal_description").keyup (e) ->
     $("span.quantity").removeClass("hidden")
-    matches = $("#goal_description").val().match(/\d+/g)
+    matches = $("#goal_description").val().match(/\d+.+\d+/g)
     if matches && matches.length == 1
       $("span.quantity").html(matches[0])
       $("span.quantity").removeClass("label-danger")

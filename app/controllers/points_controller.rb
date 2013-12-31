@@ -1,5 +1,5 @@
 class PointsController < ApplicationController
-  before_action :authorize_user!
+  before_action :authenticate_user!
   before_action :set_goal
   before_action :set_point, only: [:edit, :update, :destroy]
 
@@ -20,7 +20,8 @@ class PointsController < ApplicationController
         @goal.save!
         format.json { render action: 'show', status: :created, location: @point }
       else
-        format.html { render action: 'new' }
+        format.html { redirect_to goals_path, alert: 'Your progress could not be updated because your quantity was not a valid number. 
+          Please try again.' }
         format.json { render json: @point.errors, status: :unprocessable_entity }
       end
     end
