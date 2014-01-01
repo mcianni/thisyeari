@@ -53,8 +53,21 @@ a.btn:visited {
   padding: 24px 40px 36px;
 }
 
-.xxl {
+a.xxl {
   font-size: 80px;
+  text-align: center;
+  background-color: #00FFF5;
+  color: #333;
+  display: block;
+  padding: 10px;
+  h2 {
+    margin: 0;
+  }
+
+  &:hover {
+    text-decoration: none;
+    color: #5200FF;
+  }
 }
 
 //.navbar-inverse {

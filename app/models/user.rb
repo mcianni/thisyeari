@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
-         :omniauthable, omniauth_providers: [:twitter, :facebook]
+         :omniauthable, omniauth_providers: [:twitter, :facebook, :google_oauth2]
 
   has_many :goals
 
@@ -11,23 +11,11 @@ class User < ActiveRecord::Base
   	self.goals.first
   end
 
-  def self.find_for_facebook_oauth(auth, signed_in_resource=nil)
+  def self.find_for_oauth(auth, signed_in_resource=nil)
     user = User.where(provider: auth.provider, uid: auth.uid).first
     unless user
-      user = User.create(name: auth.info.name,
-                         provider: auth.provider,
-                         uid: auth.uid,
-                         email: auth.info.email || "#{auth.uid}@bytheendoftheyear.com",
-                         password: Devise.friendly_token[0,20]
-                         )
-    end
-    user
-  end
-
-  def self.find_for_twitter_oauth(auth, signed_in_resource=nil)
-    user = User.where(provider: auth.provider, uid: auth.uid).first
-    unless user
-      user = User.create(name: auth.info.nickname,
+      name = auth.provider == 'twitter' ? auth.info.nickname : auth.info.name
+      user = User.create(name: name,
                          provider: auth.provider,
                          uid: auth.uid,
                          email: auth.info.email || "#{auth.uid}@bytheendoftheyear.com",

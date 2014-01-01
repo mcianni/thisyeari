@@ -6,6 +6,8 @@ module PagesHelper
       "@#{user.name}"
     when 'facebook'
       "#{user.name}"
+    when 'google_oauth2'
+      "#{user.name}"
     end
   end
 
