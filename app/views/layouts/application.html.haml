@@ -4,7 +4,7 @@
     %meta(charset="utf-8")
     %meta(http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1")
     %meta(name="viewport" content="width=device-width, initial-scale=1.0")
-    %title= content_for?(:title) ? yield(:title) : "ByTheEndOfTheYear"
+    %title= content_for?(:title) ? yield(:title) : "THIS YEAR I"
     = csrf_meta_tags
     / Le HTML5 shim, for IE6-8 support of HTML elements
     /[if lt IE 9]
@@ -23,17 +23,27 @@
   %body
     .navbar.navbar-static-top
       .container
+        .navbar-brand
+          %a(href="/") THIS YEAR I
+          %div.slogan
+            SET ONE QUANTIFIABLE GOAL<br/>
+            AND TRACK YOUR PROGRESS TOWARDS IT 
+        /%a.navbar-brand(href="/")
+        /  THIS YEAR I<br/>
+        /%p.navbar-text
+        /  SET ONE QUANTIFIABLE GOAL<br/>
+        /  AND TRACK YOUR PROGRESS TOWARDS IT
         %button.navbar-toggle(type="button" data-toggle="collapse" data-target=".navbar-responsive-collapse")
-          %span.icon-bar
-          %span.icon-bar
-          %span.icon-bar
+        /  %span.icon-bar
+        /  %span.icon-bar
+        /  %span.icon-bar
         /%a.navbar-brand(href="/") By The End Of The Year
-        .nav-collapse.collapse.navbar-responsive-collapse
-          %ul.nav.navbar-nav
-            %li= link_to "Link 1", "/path1"
-            %li= link_to "Link 2", "/path2"
-            %li= link_to "Link 3", "/path3"
-            %li= link_to "Link 3", "/path3"
+        /.nav-collapse.collapse.navbar-responsive-collapse
+        /  %ul.nav.navbar-nav
+        /    %li= link_to "Link 1", "/path1"
+        /    %li= link_to "Link 2", "/path2"
+        /    %li= link_to "Link 3", "/path3"
+        /    %li= link_to "Link 3", "/path3"
 
         .navbar-right.user-nav
           /= render 'misc/register'
