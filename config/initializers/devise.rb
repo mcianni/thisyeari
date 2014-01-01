@@ -233,7 +233,8 @@ Devise.setup do |config|
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', :scope => 'user,public_repo'
   config.omniauth :twitter, "fqtOabZUlGVSjQB7TNPgQ", "TYRQHWh0d859crcwzMBGCym40A9addKMv9y0R1Lg", scope: 'user'
-
+  config.omniauth :facebook, "195355944001905", "4936fcd39663ba304d994022aadc4acd"
+  
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
   # change the failure app, you can configure them inside the config.warden block.

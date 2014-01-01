@@ -6,7 +6,7 @@ module GoalsHelper
     out += "</h2>"
     out += "#{f2(t)} / #{f2(c)}"
     out += "<br/>"
-    out += ' ' + f2(100 * c / t) + "%"
+    out += (t <= 0.0) ? '0.0%' : ' ' + f2(100 * c / t) + "%"
     out.html_safe
   end
 

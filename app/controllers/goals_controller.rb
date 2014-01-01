@@ -10,7 +10,7 @@ class GoalsController < ApplicationController
       qpd = @goal.quantity / 365
       @q_by_today    = qpd * (time.yday - 1)
       @q_by_tomorrow = qpd * time.yday
-      @q_by_month    = qpd * Date.new(time.year, time.month - 1).yday
+      @q_by_month    = qpd * Date.new(time.year, time.month, -1).yday
       @q_by_week     = qpd * (time.yday + (7 - time.wday - 1))
       @points = @goal.points
     end
@@ -45,7 +45,7 @@ class GoalsController < ApplicationController
 
     respond_to do |format|
       if @goal.save
-        format.html { redirect_to :goals, notice: 'Goal was successfully created.' }
+        format.html { redirect_to :goals, notice: 'Your goal was successfully created. Go get it!' }
         format.json { render action: 'show', status: :created, location: @goal }
       else
         format.html { render action: 'new' }
@@ -59,7 +59,7 @@ class GoalsController < ApplicationController
   def update
     respond_to do |format|
       if @goal.update(goal_params)
-        format.html { redirect_to :goals, notice: 'Goal was successfully updated.' }
+        format.html { redirect_to :goals, notice: 'Your goal was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
