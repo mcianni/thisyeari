@@ -65,11 +65,17 @@ a.btn:visited {
     //font-family: 'The Girl Next Door';
     font-family: Arial;
     a {
+      font-family: 'Coustard';
+      font-weight: 900;
       color: #333;
     }
     .slogan {
-      font-size: 14px;
-      line-height: normal;
+      font-family: 'Titillium Web';
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 16px;
+      margin-left: 5px;
+      //line-height: normal;
     }
   }
 }
