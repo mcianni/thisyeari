@@ -13,6 +13,7 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
 gem 'omniauth-google-oauth2'
+gem 'newrelic_rpm'
 
 group :development do
   gem 'better_errors'
