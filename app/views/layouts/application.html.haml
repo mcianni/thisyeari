@@ -24,49 +24,25 @@
     = render 'misc/analytics'
 
   %body
-    .navbar.navbar-static-top
+    .wrap
+      .navbar.navbar-static-top
+        .container
+          .navbar-brand
+            %a(href="/") THIS YEAR I
+            %div.slogan
+              SET ONE QUANTIFIABLE GOAL<br/>
+              AND TRACK YOUR PROGRESS TOWARDS IT 
+          .navbar-right.user-nav
+            = render 'misc/login'
+
       .container
-        .navbar-brand
-          %a(href="/") THIS YEAR I
-          %div.slogan
-            SET ONE QUANTIFIABLE GOAL<br/>
-            AND TRACK YOUR PROGRESS TOWARDS IT 
-        /%a.navbar-brand(href="/")
-        /  THIS YEAR I<br/>
-        /%p.navbar-text
-        /  SET ONE QUANTIFIABLE GOAL<br/>
-        /  AND TRACK YOUR PROGRESS TOWARDS IT
-        //%button.navbar-toggle(type="button" data-toggle="collapse" data-target=".navbar-responsive-collapse")
-        /  %span.icon-bar
-        /  %span.icon-bar
-        /  %span.icon-bar
-        /%a.navbar-brand(href="/") By The End Of The Year
-        /.nav-collapse.collapse.navbar-responsive-collapse
-        /  %ul.nav.navbar-nav
-        /    %li= link_to "Link 1", "/path1"
-        /    %li= link_to "Link 2", "/path2"
-        /    %li= link_to "Link 3", "/path3"
-        /    %li= link_to "Link 3", "/path3"
-
-        .navbar-right.user-nav
-          /= render 'misc/register'
-          = render 'misc/login'
-
-    .container
-      .row
-        .col-lg-12
-          = bootstrap_flash
-          .well
-            = yield
-          .ps
-            = yield :ps
-        /.col-lg-3
-        /  .well.sidebar-nav
-        /    %h3 Sidebar
-        /    %ul.nav.nav-list
-        /      %li.nav-header Sidebar
-        /      %li= link_to "Link 1", "/path1"
-        /      %li= link_to "Link 2", "/path2"
-        /      %li= link_to "Link 3", "/path3"
-      /%footer
-      /  %p &copy; Company 2013
+        .row
+          .col-lg-12
+            = bootstrap_flash
+            .well
+              = yield
+            .ps
+              = yield :ps
+    %footer
+      .container
+        %p Say hi. hello@thisyeari.com

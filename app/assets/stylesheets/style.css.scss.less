@@ -5,6 +5,14 @@
 html, body {
   background: image-url("bg.jpg") no-repeat center center fixed;
   background-size: cover;
+  height: 100%;
+}
+
+footer {
+  height: 40px;
+  text-align: right;
+  color: #c7c7c7;
+  text-shadow: 1px 1px 1px #333;
 }
 
 body {
@@ -12,6 +20,13 @@ body {
   .main-container {
     background-color: #EEE;
   }
+}
+
+.wrap {
+  min-height: 100%;
+  height: auto;
+  margin: 0 auto -40px;
+  padding: 0 0 40px;
 }
 
 .btn {
@@ -100,6 +115,8 @@ a.xxl {
 .user-nav {
   background-color: #333;
   padding: 8px;
+  text-align: center;
+
   span {
     color: whitesmoke;
   }
@@ -114,8 +131,8 @@ a.xxl {
       padding: 2px;
       &:hover {
         text-decoration: none;
-        color: #5200FF;
-        background-color: #00FFF5;
+        color: white;
+        //background-color: #00FFF5;
       }
     }
   }
@@ -213,6 +230,10 @@ form.xlarge {
       padding: 2px 8px;
     }
   }
+}
+
+input#point_quantity {
+  width: 80px;
 }
 
 span.quantity {
