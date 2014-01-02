@@ -1,4 +1,3 @@
-/= render 'points/form'
 .pull-right
   = link_to 'Update my progress', '#new-point', class: 'btn btn-primary btn-lg', data: { toggle: 'modal' }
 
@@ -7,11 +6,3 @@
            header: { show_close: true, dismiss: 'modal', title: "I've made progress toward my goal!" }, 
            body: Proc.new { render 'points/form' }.call,
            footer: nil
-
-/.modal.fade
-/  .modal-dialog
-/    .modal-content
-/      .modal-header
-/        %h3 I've made progress towards my goal!
-/      .modal-body
-/        = render 'points/form'

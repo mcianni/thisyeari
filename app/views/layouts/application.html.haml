@@ -9,7 +9,6 @@
     /[if lt IE 9]
       = javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.1/html5shiv.js"
     = stylesheet_link_tag "application", :media => "all"
-    = stylesheet_link_tag "//fonts.googleapis.com/css?family=The+Girl+Next+Door"
     = stylesheet_link_tag "//fonts.googleapis.com/css?family=Coustard:400,900"
     = stylesheet_link_tag "//fonts.googleapis.com/css?family=Titillium+Web:900,700"
     = stylesheet_link_tag '//fortawesome.github.io/Font-Awesome/assets/font-awesome/css/font-awesome.css'
@@ -38,6 +37,7 @@
         .row
           .col-lg-12
             = bootstrap_flash
+            /= link_to 'What is this?', '#', class: 'loud pull-right'
             .well
               = yield
             .ps

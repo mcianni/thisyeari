@@ -6,7 +6,7 @@
     = link_to icon('sign-out'), destroy_user_session_path, method: :delete, 
         class: 'has-tooltip', data: { toggle: 'tooltip', placement: 'bottom', original_title: 'Logout' }, title: 'Logout'
 - else
-  %span Sign in with:
+  %span SIGN IN WITH:
   .providers
     = link_to icon('google-plus-square'), user_omniauth_authorize_path(provider: :google_oauth2)
     = link_to icon('twitter-square'), user_omniauth_authorize_path(provider: :twitter)
