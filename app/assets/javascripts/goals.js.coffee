@@ -19,7 +19,3 @@ $ ->
       $("span.quantity").removeClass("label-success")
       $("span.quantity").addClass("label-danger")
       $("input[type='submit']").attr("disabled", "disabled")
-
-  $("#new-point").click (e) ->
-    e.preventDefault()
-    $(".modal").modal()

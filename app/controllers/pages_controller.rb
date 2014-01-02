@@ -30,7 +30,7 @@ class PagesController < ApplicationController
       'lose <span>40</span> pounds',
       'contribute to <span>6</span> kickstarter projects',
       'buy my wife/husband flowers <span>12</span> times'
-    ]
+    ].shuffle
   end
 
 end

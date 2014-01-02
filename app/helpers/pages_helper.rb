@@ -11,4 +11,7 @@ module PagesHelper
     end
   end
 
+  def icon s
+    content_tag :i, nil, class: "fa fa-#{s}"
+  end
 end

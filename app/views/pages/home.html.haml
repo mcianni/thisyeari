@@ -4,7 +4,7 @@
   /%h4.pull-right <i class='icon icon-arrow-down'></i> Get Inspired! <i class='icon icon-arrow-down'></i>
   .carousel.slide{ data: { ride: 'carousel' } }
     .carousel-inner
-      .item.active= "I will #{@examples.shift}.".html_safe
+      .item.active= "This year I will #{@examples.shift}.".html_safe
       - @examples.each do |example|
-        .item= "I will #{example}.".html_safe
-  %h4.pull-right <i class='icon icon-arrow-up'></i> Get Inspired! <i class='icon icon-arrow-up'></i>
+        .item= "This year I will #{example}.".html_safe
+  %h4.pull-right <i class='fa fa-arrow-up'></i> Get Inspired! <i class='fa fa-arrow-up'></i>

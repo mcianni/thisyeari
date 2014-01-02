@@ -8,6 +8,6 @@
 - else
   %span Sign in with:
   .providers
-    = link_to glyph('google-plus'), user_omniauth_authorize_path(provider: :google_oauth2)
-    = link_to glyph('twitter'), user_omniauth_authorize_path(provider: :twitter)
-    = link_to glyph('facebook'), user_omniauth_authorize_path(provider: :facebook)
+    = link_to icon('google-plus-square'), user_omniauth_authorize_path(provider: :google_oauth2)
+    = link_to icon('twitter-square'), user_omniauth_authorize_path(provider: :twitter)
+    = link_to icon('facebook-square'), user_omniauth_authorize_path(provider: :facebook)

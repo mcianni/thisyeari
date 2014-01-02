@@ -3,14 +3,14 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 html, body {
-  background: url(image-path('bg.jpg')) no-repeat center center fixed;
+  background: image-url("bg.jpg") no-repeat center center fixed;
   background-size: cover;
 }
 
 body {
   background-color: #333;
   .main-container {
-  	background-color: #EEE;
+    background-color: #EEE;
   }
 }
 
@@ -45,7 +45,7 @@ a.btn:visited {
 
 .well,
 .jumbotron {
-  background: url(image-path('content-bg.png')) repeat top left;
+  background: image-url('content-bg.png') repeat top left;
   border-radius: 0;
   border: 0;
   //margin-top: 80px;
@@ -128,7 +128,16 @@ a.xxl {
 
 h2.lead {
   font-size: 60px;
-  margin-top: 0;
+  line-height: 60px;
+  //margin-top: 0;
+  //margin: 8px 0;
+}
+
+.fa-google:before {
+  content: "\f0d5";
+  width: 0.58em;
+  overflow: hidden;
+  display: inline-block;
 }
 
 form.large {
@@ -226,3 +235,20 @@ h2.negative {
   color: red;
 }
 
+@import "twitter/bootstrap/variables.less";
+
+@media (max-width: @screen-xs-max) {
+  form.large input[type="text"] {
+    padding: 2px;
+    font-size: 14px;
+  }
+
+  .carousel {
+    font-size: 12px;
+  }
+
+  .user-nav {
+    display: inline-block;
+    float: right;
+  }
+}
