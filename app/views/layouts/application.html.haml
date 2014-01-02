@@ -6,7 +6,6 @@
     %meta(name="viewport" content="width=device-width, initial-scale=1.0")
     %title= content_for?(:title) ? yield(:title) : "THIS YEAR I"
     = csrf_meta_tags
-    / Le HTML5 shim, for IE6-8 support of HTML elements
     /[if lt IE 9]
       = javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.1/html5shiv.js"
     = stylesheet_link_tag "application", :media => "all"
@@ -15,11 +14,11 @@
     = stylesheet_link_tag "//fonts.googleapis.com/css?family=Titillium+Web:900,700"
     = stylesheet_link_tag '//fortawesome.github.io/Font-Awesome/assets/font-awesome/css/font-awesome.css'
 
-    /= favicon_link_tag 'apple-touch-icon-144x144-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '144x144'
-    /= favicon_link_tag 'apple-touch-icon-114x114-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '114x114'
-    /= favicon_link_tag 'apple-touch-icon-72x72-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '72x72'
-    /= favicon_link_tag 'apple-touch-icon-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png'
-    /= favicon_link_tag 'favicon.ico', :rel => 'shortcut icon'
+    = favicon_link_tag 'apple-touch-icon-144x144-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '144x144'
+    = favicon_link_tag 'apple-touch-icon-114x114-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '114x114'
+    = favicon_link_tag 'apple-touch-icon-72x72-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '72x72'
+    = favicon_link_tag 'apple-touch-icon-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png'
+    = favicon_link_tag 'favicon.png', :rel => 'shortcut icon'
     = javascript_include_tag "application"
     = render 'misc/analytics'
 
@@ -31,7 +30,7 @@
             %a(href="/") THIS YEAR I
             %div.slogan
               SET ONE QUANTIFIABLE GOAL<br/>
-              AND TRACK YOUR PROGRESS TOWARDS IT 
+              AND TRACK YOUR PROGRESS TOWARD IT 
           .navbar-right.user-nav
             = render 'misc/login'
 
@@ -45,4 +44,4 @@
               = yield :ps
     %footer
       .container
-        %p Say hi. hello@thisyeari.com
+        %p Say hello. hello@thisyeari.com

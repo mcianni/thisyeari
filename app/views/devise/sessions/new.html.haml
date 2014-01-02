@@ -1,14 +1,18 @@
-%h2 Sign in with your account...
+%h3 Sign in to THISYEARI.com using your account with one of the following providers.
+%p.lead
+  After clicking an icon below, you will be redirected back to this website.
 
 
 .row
   .col-md-3
-    = link_to "#{content_tag(:h2, 'Google')}#{glyph('google-plus')}".html_safe, user_omniauth_authorize_path(provider: :google_oauth2), class: 'xxl'
+    = link_to "#{content_tag(:h2, 'Google')}#{icon('google-plus')}".html_safe, user_omniauth_authorize_path(provider: :google_oauth2), class: 'xxl'
   .col-md-3
-    = link_to "#{content_tag(:h2, 'Twitter')}#{glyph('twitter')}".html_safe, user_omniauth_authorize_path(provider: :twitter), class: 'xxl'
+    = link_to "#{content_tag(:h2, 'Twitter')}#{icon('twitter')}".html_safe, user_omniauth_authorize_path(provider: :twitter), class: 'xxl'
   .col-md-3
-    = link_to "#{content_tag(:h2, 'Facebook')}#{glyph('facebook')}".html_safe, user_omniauth_authorize_path(provider: :facebook), class: 'xxl'
+    = link_to "#{content_tag(:h2, 'Facebook')}#{icon('facebook')}".html_safe, user_omniauth_authorize_path(provider: :facebook), class: 'xxl'
 
+%p.lead
+  Don't worry. We won't post on your wall or on your timeline, or share your info with anyone or annoy you in any way.
 
 
 /<%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
