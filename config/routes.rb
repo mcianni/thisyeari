@@ -1,6 +1,8 @@
 Bytheendoftheyear::Application.routes.draw do
 
-  root 'pages#home'  
+  root 'pages#home'
+  get 'privacy-policy' => 'pages#privacy_policy'
+  
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   resource :goals, :path => 'my-goal' do
     resources :points, except: [:index, :new, :show]

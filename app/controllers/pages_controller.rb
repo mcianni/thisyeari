@@ -1,6 +1,10 @@
 class PagesController < ApplicationController
 
   def home
+    if user_signed_in?
+      redirect_to goals_path
+    end
+
     @examples = [
       'run <span>300</span> miles',
       'take my dog hiking <span>25</span> times',
@@ -33,4 +37,6 @@ class PagesController < ApplicationController
     ].shuffle
   end
 
+  def privacy_policy
+  end
 end

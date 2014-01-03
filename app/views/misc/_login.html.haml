@@ -2,9 +2,10 @@
   %span= "Hi, #{user_name(current_user)}"
   .controls
     - if current_user.goal
-      = link_to icon('cog'), edit_goals_path
+      = link_to icon('cog'), edit_goals_path, class: 'has-tooltip', 
+        data: { toggle: 'tooltip', placement: 'bottom', original_title: 'Edit my goal' }, title: 'Edit my goal'
     = link_to icon('sign-out'), destroy_user_session_path, method: :delete, 
-        class: 'has-tooltip', data: { toggle: 'tooltip', placement: 'bottom', original_title: 'Logout' }, title: 'Logout'
+        class: 'has-tooltip', data: { toggle: 'tooltip', placement: 'bottom' }, title: 'Logout'
 - else
   %span SIGN IN WITH:
   .providers
