@@ -10,27 +10,18 @@ html, body {
 
 footer {
   min-height: 40px;
-  //text-align: right;
-  color: #c7c7c7;
   color: #333;
   font-family: "Titillium Web";
-  //text-shadow: 1px 1px 1px #333;
   font-size: 18px;
   text-transform: uppercase;
+  .container { padding-top: 10px; }
+
   a {
     color: #00fff5;
-    text-shadow: 1px 1px 0px #000;
-    &:hover { color: white; }
-  }
-
-  .hello {
-    a {
-      margin-left: 10px;
-    }
-  }
-
-  .pull-right a {
     margin-right: 10px;
+    text-shadow: 1px 1px 0px #000;
+    &.first  { margin-left: 10px; }
+    &:hover { color: white; }
   }
 
 }
@@ -58,7 +49,6 @@ body {
 }
 
 .btn-primary.visually-disabled {
-  //background-color: #FFF;
   opacity: 0.65;
   filter: alpha(opacity=65);
   &:hover {
@@ -149,7 +139,6 @@ a.xxl {
       font-size: 16px;
       line-height: 16px;
       margin-left: 5px;
-      //line-height: normal;
     }
   }
 }
@@ -187,8 +176,6 @@ a.xxl {
 h2.lead {
   font-size: 60px;
   line-height: 60px;
-  //margin-top: 0;
-  //margin: 8px 0;
 }
 
 form.large {
@@ -208,10 +195,6 @@ form.large {
 }
 
 form.xlarge {
-  input[type="text"] {
-    //width: 100%;
-  }
-
   input[type="text"],
   input[type="number"], {
     border-radius: 0;
@@ -261,12 +244,13 @@ footer,
 .help a {
   color: whitesmoke;
   background-color: #333;
-  padding: 5px 10px;
   font-family: 'Titillium Web';
   font-weight: 700;
   font-size: 16px;
   text-transform: uppercase;
 }
+
+.ps h4, a.loud, .help a { padding: 5px 10px; }
 
 .ps h4 {
   margin-top: 0;
@@ -279,9 +263,7 @@ footer,
   line-height: normal;
   .item {
     span {
-      //background-color: #333;
       color: #00FFF5;
-      //padding: 2px 8px;
     }
   }
 }
@@ -313,12 +295,13 @@ h2.negative { color: red;   }
   }
 
   .carousel {
-    font-size: 12px;
+    font-size: 14px;
   }
 
   .user-nav {
     display: inline-block;
     float: right;
+    padding: 2px;
     .providers, .controls {
       font-size: 22px;
     }
@@ -344,7 +327,7 @@ h2.negative { color: red;   }
 
 }
 
-@media (max-width: @screen-md-max) {
+@media (max-width: @screen-lg-min) {
   footer .pull-right {
     clear: both;
     display: block;
