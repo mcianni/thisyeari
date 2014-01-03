@@ -1,7 +1,6 @@
 = render 'goals/short_form'
 
 - content_for :ps do
-  /%h4.pull-right <i class='icon icon-arrow-down'></i> Get Inspired! <i class='icon icon-arrow-down'></i>
   .carousel.slide{ data: { ride: 'carousel' } }
     .carousel-inner
       .item.active= "This year I will #{@examples.shift}.".html_safe
