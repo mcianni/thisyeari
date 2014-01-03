@@ -11,7 +11,6 @@
     = stylesheet_link_tag "application", :media => "all"
     = stylesheet_link_tag "//fonts.googleapis.com/css?family=Coustard:400,900"
     = stylesheet_link_tag "//fonts.googleapis.com/css?family=Titillium+Web:900,700"
-    /= stylesheet_link_tag '//fortawesome.github.io/Font-Awesome/assets/font-awesome/css/font-awesome.css'
     = stylesheet_link_tag '//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css'
 
     = favicon_link_tag 'apple-touch-icon-144x144-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '144x144'
@@ -51,6 +50,7 @@
           /%small &copy; 2014 thisyeari.com
           /= link_to 'Privacy Policy', '/privacy-policy'
         %span.pull-right
+          = link_to 'About', '/about'
           = link_to 'Privacy Policy', '/privacy-policy'
           &copy; 2014 thisyeari.com 
 
