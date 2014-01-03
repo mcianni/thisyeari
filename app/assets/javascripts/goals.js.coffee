@@ -7,25 +7,20 @@ ready = ->
   if $("#goal_descrption").val() == "This year I will "
     $("#goal_description").val($("#goal_description").val())
 
-  $("input.vis-disabled").click (e) ->
+  $("form#new_goal").submit (e) ->
     matches = $("#goal_description").val().match(/\d+\.?\d*/g)
     if !matches || matches.length != 1
-      console.log('im confused!')
+      $("input#goal_description").tooltip('show')
       e.preventDefault()
 
   $("#goal_description").keyup (e) ->
     $("span.quantity").removeClass("hidden")
     matches = $("#goal_description").val().match(/\d+\.?\d*/g)
     if matches && matches.length == 1
-      #$("span.quantity").html(matches[0])
-      #$("span.quantity").removeClass("label-danger")
-      #$("span.quantity").addClass("label-success")
-      #$("input[type='submit']").attr("disabled", null).val("Set my goal at " + matches[0])
+      $("input[type=submit]").removeClass("visually-disabled").val("Set my goal at " + matches[0])
+      $("input#goal_description").tooltip('hide')
     else
-      #$("span.quantity").html("X")
-      #$("span.quantity").removeClass("label-success")
-      #$("span.quantity").addClass("label-danger")
-      #$("input[type='submit']").attr("disabled", "disabled").val("Set my goal")
+      $("input[type=submit]").addClass("visually-disabled").val("Set my goal")
 
 $(document).ready(ready)
 $(document).on 'page:load', ready

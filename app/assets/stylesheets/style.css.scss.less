@@ -9,7 +9,7 @@ html, body {
 }
 
 footer {
-  height: 40px;
+  min-height: 40px;
   //text-align: right;
   color: #c7c7c7;
   color: #333;
@@ -27,6 +27,10 @@ footer {
     a {
       margin-left: 10px;
     }
+  }
+
+  .pull-right a {
+    margin-right: 10px;
   }
 
 }
@@ -53,9 +57,25 @@ body {
   border: 0;
 }
 
-.btn-primary[disabled] {
+.btn-primary.visually-disabled {
+  //background-color: #FFF;
+  opacity: 0.65;
+  filter: alpha(opacity=65);
+  &:hover {
+    background-color: #00fff5;
+  }  
+}
+
+.tooltip.bottom .tooltip-arrow { border-bottom-color: #333; }
+
+.tooltip-inner {
+  max-width: 300px;
   background-color: #333;
-  color: white;
+
+  span {
+    color: #00fff5;
+    display: block;
+  }
 }
 
 a.btn:visited {
@@ -313,4 +333,13 @@ h2.negative { color: red;   }
     padding: 10px;
     margin-top: 0;
   }
+
+}
+
+@media (max-width: @screen-md-max) {
+  footer .pull-right {
+    clear: both;
+    display: block;
+    float: none !important;
+  } 
 }
