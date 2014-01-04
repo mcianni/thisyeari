@@ -42,4 +42,7 @@ class PagesController < ApplicationController
 
   def about
   end
+
+  def demo
+  end
 end

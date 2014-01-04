@@ -8,6 +8,8 @@ html, body {
   height: 100%;
 }
 
+a { color: #00fff5; }
+
 footer {
   min-height: 40px;
   color: #333;
@@ -20,17 +22,13 @@ footer {
     color: #00fff5;
     margin-right: 10px;
     text-shadow: 1px 1px 0px #000;
-    &.first  { margin-left: 10px; }
+    &.first { margin-left: 10px; }
     &:hover { color: white; }
   }
-
 }
 
-body {
-  background-color: #333;
-  .main-container {
-    background-color: #EEE;
-  }
+.main {
+  padding-bottom: 20px;
 }
 
 .wrap {
@@ -77,6 +75,7 @@ a.btn:visited {
   background-color: transparent;
   border: 0;
   border-radius: 0;
+  -moz-border-radius: 0; -webkit-border-radius: 0;
   margin-bottom: 0;
   color: white;
   text-shadow: 1px 1px 3px #333;
@@ -120,7 +119,6 @@ a.xxl {
 .navbar {
   margin-bottom: 80px;
   .navbar-brand {
-    color: whitesmoke;
     color: #333;
     font-size: 36px;
     line-height: 28px;
@@ -133,13 +131,26 @@ a.xxl {
         color: white;
       }
     }
-    .slogan {
+    .slogan,
+    .subnav a {
       font-family: 'Titillium Web';
       font-weight: 700;
       font-size: 16px;
       line-height: 16px;
       margin-left: 5px;
     }
+    .subnav { background-color: #333; }
+    .subnav a {
+      padding: 0;
+      color: #00fff5;
+      text-transform: uppercase;
+      margin-right: 8px;
+      &:hover {
+        background-color: transparent;
+        color: white;
+      }
+    }
+    .subnav li { font-size: 16px; line-height: normal; color: white; }
   }
 }
 
@@ -237,6 +248,15 @@ form.xlarge {
   font-size: 18px;
 }
 
+img.img-bordered {
+  border: 10px solid #333;
+}
+
+p.mid {
+  font-size: 18px;
+  font-weight: 200;
+}
+
 .ps h4,
 a.loud,
 footer,
@@ -261,10 +281,8 @@ footer,
   margin-top: 30px;
   font-size: 32px;
   line-height: normal;
-  .item {
-    span {
-      color: #00FFF5;
-    }
+  .item span {
+    color: #00FFF5;
   }
 }
 
@@ -294,19 +312,16 @@ h2.negative { color: red;   }
     font-size: 14px;
   }
 
-  .carousel {
-    font-size: 14px;
-  }
-
   .user-nav {
     display: inline-block;
     float: right;
-    padding: 2px;
+    padding: 4px;
     .providers, .controls {
       font-size: 22px;
     }
   }
 
+  .carousel,
   .ps h4,
   a.loud,
   footer,
@@ -328,9 +343,12 @@ h2.negative { color: red;   }
 }
 
 @media (max-width: @screen-lg-min) {
-  footer .pull-right {
-    clear: both;
-    display: block;
-    float: none !important;
-  } 
+  footer {
+    .container { padding-top: 2px; }
+    .pull-right {
+      clear: both;
+      display: block;
+      float: none !important;
+    }
+  }
 }

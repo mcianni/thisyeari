@@ -6,7 +6,7 @@ class GoalsController < ApplicationController
   # GET /my-goal
   def show
     if @goal
-      time = Time.now
+      time = Time.now + 46.days
       qpd = @goal.quantity / 365
       @q_by_today    = qpd * (time.yday - 1)
       @q_by_tomorrow = qpd * time.yday

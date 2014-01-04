@@ -16,3 +16,7 @@ en:
       save: "Save %{model}"
       new: "New %{model}"
       delete: "Delete %{model}"
+    submit:
+      goal:
+        create: "Set My Goal"
+        update: "Update My Goal"
