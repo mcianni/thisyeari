@@ -1,11 +1,13 @@
-= form_for([@goal, @point || Point.new], url: goals_points_path, html: { class: 'form-horizontal' }) do |f|
+= form_for([@goal, @point || Point.new], url: goals_points_path, html: { class: 'form-horizontal large' }) do |f|
   .form-group
-    = label_tag :quantity, "Quantity", class: 'control-label col-sm-2'
+    .col-sm-2
+      = f.label :quantity, class: 'control-label'
     .col-sm-10
       = f.text_field :quantity, required: true, class: 'form-control'
-      %span.help-block How many of what you're doing, that you did. (Required)
+      %span.help-block How many of what you're doing, that you did (required).
   .form-group
-    = label_tag :comments, "Comments", class: 'control-label col-sm-2'
+    .col-sm-2
+      = f.label :comments, class: 'control-label'
     .col-sm-10
       = f.text_field :comments, class: 'form-control col-sm-10'
       %span.help-block Leave yourself a note (optional).
