@@ -2,7 +2,8 @@
 
 = form_for @goal || Goal.new, url: goals_path, :html => { :class => 'form-horizontal large' } do |f|
   .form-group
-    = f.text_field :description, class: 'form-control', autofocus: false, value: 'This year I will ',
+    /= f.text_field :description, class: 'form-control', autofocus: true, value: 'This year I will ',
+    = f.text_field :description, class: 'form-control', value: 'This year I will ',
         data: { toggle: 'tooltip', trigger: 'manual', original_title: form_error, placement: 'bottom', html: true }
   = f.submit class: 'btn btn-primary visually-disabled', id: 'submit-goal'
 

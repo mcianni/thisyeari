@@ -3,9 +3,15 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 ready = ->
-  $("#goal_description").focus()
-  if $("#goal_descrption").val() == "This year I will "
-    $("#goal_description").val($("#goal_description").val())
+  input = $("#goal_description")
+  if input.length
+    input.focus()
+    val = input.val()
+    if val.length == 0
+      input.val("This year I will ")
+    else #if input.val() == "This year I will "
+      input.val('')
+      input.val(val)
 
   $("form#new_goal").submit (e) ->
     matches = $("#goal_description").val().match(/\d+\.?\d*/g)
@@ -14,7 +20,6 @@ ready = ->
       e.preventDefault()
 
   $("#goal_description").keyup (e) ->
-    $("span.quantity").removeClass("hidden")
     matches = $("#goal_description").val().match(/\d+\.?\d*/g)
     if matches && matches.length == 1
       $("input[type=submit]").removeClass("visually-disabled").val("Set my goal at " + matches[0])
@@ -23,7 +28,7 @@ ready = ->
       $("input[type=submit]").addClass("visually-disabled").val("Set my goal")
 
 $(document).ready(ready)
-$(document).on 'page:load', ready
+$(document).on 'page:change', ready
 
 $(document).on 'page:change', ->
   if window._gaq?
