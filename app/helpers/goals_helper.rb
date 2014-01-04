@@ -13,4 +13,10 @@ module GoalsHelper
   def f2(x, sign=false)
     if sign then '%+.2f' % x else '%.2f' % x end
   end
+
+  def tweet_your_goal_button(goal)
+    link_to "https://twitter.com/share", "Tweet your goal!", class: 'twitter-share-button', 
+      data: { size: 'large', url: "http://thisyeari.com", text: goal.description,
+              hashtags: 'thisyeari', count: 'none' }
+  end
 end
