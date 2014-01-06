@@ -6,8 +6,9 @@ Bytheendoftheyear::Application.routes.draw do
   get 'demo' => 'pages#demo'
   
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
-  resource :goals, :path => 'my-goal' do
-    resources :points, except: [:index, :new, :show]
+  resource :goals, path: 'my-goal' do
+    #resources :points, except: [:index, :new, :show]
+    resources :points, only: [:new, :create]
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

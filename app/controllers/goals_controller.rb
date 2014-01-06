@@ -44,7 +44,8 @@ class GoalsController < ApplicationController
     @goal = current_user.goals.new(goal_params)
     respond_to do |format|
       if @goal.save
-        format.html { redirect_to :goals, notice: "<p>Your goal was successfully created. Go get it!</p>#{view_context.tweet_your_goal_button(@goal)}" }
+        format.html { redirect_to :goals, 
+          notice: "<p>Your goal was successfully created. Go get it!</p>#{view_context.tweet_your_goal_button(@goal)}" }
         format.json { render action: 'show', status: :created, location: @goal }
       else
         format.html { render action: 'new' }
@@ -58,8 +59,8 @@ class GoalsController < ApplicationController
   def update
     respond_to do |format|
       if @goal.update(goal_params)
-        format.html { redirect_to :goals, notice: "<p>Your goal was successfully updated. Go get it!</p>#{view_context.tweet_your_goal_button(@goal)}" }
-        #format.html { redirect_to :goals, notice: 'Your goal was successfully updated.' }
+        format.html { redirect_to :goals, 
+          notice: "<p>Your goal was successfully updated. Go get it!</p>#{view_context.tweet_your_goal_button(@goal)}" }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
