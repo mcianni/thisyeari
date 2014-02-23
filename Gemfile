@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.2'
+gem 'rails', '4.0.3'
 
 # Use postgresql as the database for Active Record
 gem 'pg'
@@ -22,7 +22,7 @@ group :development do
   gem 'haml-rails'
   gem 'thin'
   gem 'sqlite3'
-  gem 'debugger'
+  #gem 'debugger'
 end
 
 group :test do
