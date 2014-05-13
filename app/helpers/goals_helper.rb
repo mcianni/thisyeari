@@ -15,7 +15,7 @@ module GoalsHelper
   end
 
   def tweet_your_goal_button(goal)
-    link_to "https://twitter.com/share", "Tweet your goal!", class: 'twitter-share-button', 
+    link_to "Tweet your goal!", "https://twitter.com/share", class: 'twitter-share-button', 
       data: { size: 'large', url: "http://thisyeari.com", text: goal.description,
               hashtags: 'thisyeari', count: 'none' }
   end
