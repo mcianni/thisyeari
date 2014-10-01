@@ -35,6 +35,6 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   end
 
   def failure
-    #debugger
+    raise "Third party authentication error"
   end
 end
