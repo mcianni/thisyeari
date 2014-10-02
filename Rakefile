@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-ThisYearI:Application.load_tasks
+ThisYearI::Application.load_tasks
