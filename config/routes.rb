@@ -1,4 +1,4 @@
-Bytheendoftheyear::Application.routes.draw do
+ThisYearI::Application.routes.draw do
 
   root 'pages#home'
   get 'privacy-policy' => 'pages#privacy_policy', as: 'privacy_policy'

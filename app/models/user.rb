@@ -17,7 +17,7 @@ class User < ActiveRecord::Base
       user = User.create(name: name,
                          provider: auth.provider,
                          uid: auth.uid,
-                         email: auth.info.email || "#{auth.uid}@bytheendoftheyear.com",
+                         email: auth.info.email || "#{auth.uid}@thisyeari.com",
                          password: Devise.friendly_token[0,20]
                          )
     end

@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Bytheendoftheyear::Application.config.secret_key_base = 'ce101ab538fd2236b5a645791d370d1308bbf8d04dfd1595465f756def77e4893e15d17c7088ddd515c77df3e6c6d4c65638f53d3da9918b2e79c037897eafac'
+ThisYearI::Application.config.secret_key_base = ENV["secret_key_base"]

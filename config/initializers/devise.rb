@@ -4,7 +4,8 @@ Devise.setup do |config|
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
   # confirmation, reset password and unlock tokens in the database.
-  config.secret_key = 'abf3af452985664f22e2cf7987be13e1eac2ef5cf9d482ab83d9e145fd4faa3a868e51639cb18c9663ce2da1a5fc9bbf89d508d9738bbffed52d4699670d169f'
+  #config.secret_key = 'abf3af452985664f22e2cf7987be13e1eac2ef5cf9d482ab83d9e145fd4faa3a868e51639cb18c9663ce2da1a5fc9bbf89d508d9738bbffed52d4699670d169f'
+  config.secret_key = ENV["devise_secret_key"]
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
@@ -232,10 +233,11 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', :scope => 'user,public_repo'
-  config.omniauth :twitter, "fqtOabZUlGVSjQB7TNPgQ", "TYRQHWh0d859crcwzMBGCym40A9addKMv9y0R1Lg", scope: 'user'
-  config.omniauth :facebook, "195355944001905", "4936fcd39663ba304d994022aadc4acd"
-  config.omniauth :google_oauth2, "354208491797.apps.googleusercontent.com", "s_ewqXte7qA2WpJUyTpQMz7G", { access_type: 'offline', approval_prompt: '' }
-  
+
+  config.omniauth :twitter,  ENV["omniauth_twitter_key"], ENV["omniauth_twitter_secret"], scope: 'user'
+  config.omniauth :facebook, ENV["omniauth_facebook_key"], ENV["omniauth_facebook_secret"]
+  config.omniauth :google_oauth2, ENV["omniauth_google_key"], ENV["omniauth_google_secret"], { access_type: 'offline', approval_prompt: '' }
+
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
   # change the failure app, you can configure them inside the config.warden block.

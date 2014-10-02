@@ -1,0 +1,23 @@
+defaults: &defaults
+  newrelic_license_key:
+  devise_secret_key:
+  omniauth_twitter_key:
+  omniauth_twitter_secret:
+  omniauth_facebook_key:
+  omniauth_facebook_secret:
+  omniauth_google_key:
+  omniauth_google_secret:
+  google_analytics:
+
+development:
+  <<: *defaults
+  secret_key_base:
+  database_host:
+  database_name:
+
+production:
+  secret_key_base:
+
+test:
+  <<: *defaults
+  secret_key_base:
