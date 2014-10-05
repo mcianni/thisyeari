@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :omniauthable,
          omniauth_providers: [:twitter, :facebook, :google_oauth2]
-
+  validates_presence_of :uid, :email, :provider, :name
   has_many :goals
 
   def goal

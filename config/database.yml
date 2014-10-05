@@ -35,13 +35,9 @@ test:
   encoding: unicode
   database: bytheendoftheyear_test
   pool: 5
-  username: bytheendoftheyear
-  password:
 
 production:
   adapter: postgresql
   encoding: unicode
   database: bytheendoftheyear_production
   pool: 5
-  username: bytheendoftheyear
-  password:

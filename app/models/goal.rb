@@ -2,9 +2,11 @@ class Goal < ActiveRecord::Base
   belongs_to :user
   has_many :points
   before_validation :set_quantity
+  validates :user_id, presence: true
+  validates :description, presence: true
   validates :quantity, presence: true, numericality: true
   validates :quantity, numericality: true
-  validate :quantity_must_be_numerical
+  validate  :quantity_must_be_numerical
 
   private
   def set_quantity
